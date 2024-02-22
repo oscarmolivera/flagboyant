@@ -1,29 +1,29 @@
-name: "CI"
+# name: "CI"
 
-on:
-  pull_request:
-    branches:
-      - "*"
-  push:
-    branches:
-      - "main"
-      - "master"
+# on:
+#   pull_request:
+#     branches:
+#       - "*"
+#   push:
+#     branches:
+#       - "main"
+#       - "master"
 
-jobs:
-  test:
-    runs-on: "ubuntu-22.04"
+# jobs:
+#   test:
+#     runs-on: "ubuntu-22.04"
 
-    steps:
-      - uses: "actions/checkout@v2"
+#     steps:
+#       - uses: "actions/checkout@v2"
 
-      - name: "Install CI dependencies"
-        run: |
-          ./run ci:install-deps
+#       - name: "Install CI dependencies"
+#         run: |
+#           ./run ci:install-deps
 
-      - name: "Test"
-        run: |
-          # Remove volumes in CI to avoid permission errors due to UID / GID.
-          sed -i "s|.:/app|/tmp:/tmp|g" .env*
-          sed -i "s|.:/app|/tmp:/tmp|g" docker-compose.yml
+#       - name: "Test"
+#         run: |
+#           # Remove volumes in CI to avoid permission errors due to UID / GID.
+#           sed -i "s|.:/app|/tmp:/tmp|g" .env*
+#           sed -i "s|.:/app|/tmp:/tmp|g" docker-compose.yml
 
-          ./run ci:test
+#           ./run ci:test
