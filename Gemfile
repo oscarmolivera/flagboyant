@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.3.0"
 
 gem "cssbundling-rails"
+gem "down", "~> 5.0"
 gem 'haml', '~> 6.3'
 gem "jbuilder"
 gem "jsbundling-rails"
