@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "game_identify_flags#index"
-
+  resources :countries
   # Sidekiq has a web dashboard which you can enable below. It's turned off by
   # default because you very likely wouldn't want this to be available to
   # everyone in production.
