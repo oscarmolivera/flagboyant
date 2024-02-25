@@ -6,4 +6,5 @@
           = "#{params.inspect}"
       %h2
         .lable
-          = "#{@country.inspect}"
+          = "#{@country.inspect}"         
+      = image_tag(url_for(@country.flag), class: 'some-class')
